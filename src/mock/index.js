@@ -7,6 +7,9 @@
 import Mock from 'mockjs';
 
 import './home';
+// import './user';
+// import './product';
+// import './other';
 
 Mock.setup({
   timeout: '500-1000'
