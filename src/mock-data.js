@@ -8,7 +8,7 @@ import Mock from 'mockjs';
  * 模拟请求时长
  */
 Mock.setup({
-  timeout: '2000-5000'
+  timeout: '200-300'
 });
 
 /**
