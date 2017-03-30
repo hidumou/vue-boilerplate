@@ -1,14 +1,15 @@
 /**
- * @file mock-data
- * Created by haner on 2017/3/28.
+ * @file home
+ * Created by haner on 2017/3/30.
  */
+
 import Mock from 'mockjs';
 
 /**
  * 模拟请求时长
  */
 Mock.setup({
-  timeout: '200-300'
+  timeout: '500-1000'
 });
 
 /**

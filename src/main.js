@@ -5,11 +5,9 @@ import store from './stores';
 import axios from 'axios';
 import layer from 'layui-layer';
 import iView from 'iview';
+
 import 'iview/dist/styles/iview.css';
-
-import './mock-data';
-
-// Vue.config.productionTip = false;
+import './mock';
 
 /**
  * 请求拦截器
