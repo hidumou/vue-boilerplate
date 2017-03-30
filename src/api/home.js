@@ -5,6 +5,4 @@
 
 import axios from 'axios';
 
-let base = '';
-
-export const getHomeListData = params => { return axios.post(`${base}/index/getList`, params).then(res => res.data.data); };
+export const getHomeListData = params => { return axios.post(`${axios.PARK_API}/index/getList`, params).then(res => res); };
