@@ -4,9 +4,7 @@ import routes from './router';
 import store from './stores';
 import axios from 'axios';
 import layer from 'layui-layer';
-import iView from 'iview';
 
-import 'iview/dist/styles/iview.css';
 import './mock';
 
 /**
@@ -38,7 +36,7 @@ axios.interceptors.response.use(response => {
 Vue.use(VueRouter);
 
 //UI组件
-Vue.use(iView);
+// Vue.use(iView);
 
 const router = new VueRouter({
   routes
