@@ -6,6 +6,7 @@ import layer from 'layui-layer';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+
 // import './mock';
 
 

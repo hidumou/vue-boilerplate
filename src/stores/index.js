@@ -10,6 +10,7 @@ import * as actions from './actions';
 import * as getters from './getters';
 import demo from './modules/demo';
 import home from './modules/home';
+import user from './modules/user';
 
 Vue.use(Vuex);
 
@@ -18,7 +19,8 @@ let store = new Vuex.Store({
   getters,
   modules: {
     demo,
-    home
+    home,
+    user
   },
   plugins: [createLogger()],
   strict: process.env.NODE_ENV !== 'production'

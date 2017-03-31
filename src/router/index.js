@@ -1,5 +1,6 @@
+import Dashboard from '../pages/Dashboard.vue';
+import RoleList from '../pages/role/RoleList.vue';
 import Index from '../pages/Index.vue';
-import Home from '../pages/Home.vue';
 import Login from '../pages/Login.vue';
 import NotFound from '../pages/NotFound.vue';
 import Vue from 'vue';
@@ -10,8 +11,13 @@ const routes = [
   {
     path: '/',
     component: Index,
+    redirect: '/dashboard',
     children: [
-      {path: '/home', name: 'home', component: Home},
+      {path: '/dashboard', name: 'dashboard', component: Dashboard},
+      {
+        path: '/role', name: 'role', component: RoleList,
+        children: []
+      },
     ]
   },
   {
@@ -45,7 +51,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => !record.meta.ignore) && !isLogin()) {
     next({path: '/login', query: {redirect: from.path}});
   } else {
-    to.path === '/login' && isLogin() ? next({path: to.query.redirect || '/home'}) : next();
+    to.path === '/login' && isLogin() ? next({path: to.query.redirect || '/'}) : next();
   }
 
 });

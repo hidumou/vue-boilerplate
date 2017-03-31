@@ -30,7 +30,11 @@ export const logout = params => {
  * 是否登录
  */
 export const isLogin = () => {
-  let user = Storage.get(Storage.TOKEN);
+  let user = getUser();
   return user && user.token;
+};
+
+export const getUser = () => {
+  return Storage.get(Storage.TOKEN);
 };
 

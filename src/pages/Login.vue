@@ -27,14 +27,15 @@
               <input type="text" class="form-control" name="username" v-model="loginData.username" placeholder="账号">
             </div>
           </div>
-          <div class="form-group" v-show="currentRole.value !== 2">
+          <div class="form-group" v-if="currentRole.value !== 2">
             <input type="text" class="form-control" name="mallid" v-model="loginData.mallid" placeholder="商场编号">
           </div>
           <div class="form-group">
             <input type="password" class="form-control" name="password" v-model="loginData.password" placeholder="密码">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary btn-block" :disabled="isLogin" type="submit" v-text="isLogin ? '登录中...':'登 录'"></button>
+            <button class="btn btn-primary btn-block" :disabled="isLogin" type="submit"
+                    v-text="isLogin ? '登录中...':'登 录'"></button>
           </div>
         </form>
       </div>
@@ -43,15 +44,14 @@
 </template>
 
 <script>
-  import * as UserService from '../api/user';
-  import Storage from '../commons/utils/Storage';
-  import layer from 'layui-layer';
 
   import '../assets/style/login.scss';
+  import {mapGetters} from 'vuex';
 
   export default {
     created(){
       this.initRole();
+      console.log(this);
     },
     methods: {
       initRole: function () {
@@ -70,27 +70,24 @@
         return true;
       },
       login: function () {
-        let self = this;
-        this.validate() && this.changeLoginBtnState().buildParam();
-        UserService.login(this.loginData).then(function (res) {
-          self.isLogin = false;
-          if (res.status !== 0) {
-            layer.msg(res.msg || 'error');
-            return;
-          }
-          Storage.set(Storage.TOKEN, res.data);
-          self.$router.push('login');
-        });
+        this.validate() && this.buildParam();
+        this.$store.dispatch('login', this.loginData);
       },
       buildParam: function () {
         this.loginData.role = this.currentRole.value;
         return this;
       }
     },
-    computed: {},
+    computed: {
+      ...mapGetters(['info', 'isLogin'])
+    },
+    watch: {
+      'info': function () {
+          this.$router.push({path:'/'});
+      }
+    },
     data () {
       return {
-        isLogin: false,
         currentRole: undefined,
         loginData: {
           username: '',
