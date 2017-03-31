@@ -1,7 +1,7 @@
 /**
  * @file Storage
  * Created by haner on 2017/3/30.
- * @brief
+ * @brief 本地存储工具
  */
 
 export default Storage = (function () {
