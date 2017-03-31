@@ -1,0 +1,7 @@
+.expand-transition {
+  transition: all 1s ease;
+}
+
+.expand-enter, .expand-leave {
+  opacity: 0;
+}
