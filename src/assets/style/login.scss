@@ -3,6 +3,9 @@
 $color-login-glob-bg: #269972;
 $color-login-glob-text: #fff;
 
+$size-login-form-width: 900px;
+$size-login-form-height: $size-login-form-width/2;
+
 //change placeholder color
 ::-webkit-input-placeholder, /* WebKit browsers */
 ::-moz-placeholder, /* Mozilla Firefox 19+ */
@@ -17,10 +20,11 @@ $color-login-glob-text: #fff;
   background: #323b42;
 
   .row {
-    @include layout-center($width: 900px, $height: 450px);
-    background: $color-login-glob-bg;
+    @include layout-center($size-login-form-width, $size-login-form-height);
+    //background: ;
+    @include linear-gradient(left, #70d0af, $color-login-glob-bg);
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.62) 0 0 50px 5px;
+    box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.62);
     overflow: hidden;
 
     .col-lg-6 {
@@ -73,8 +77,10 @@ $color-login-glob-text: #fff;
             }
           }
           //提交按钮
-          button[type="submit"]{
+          button[type="submit"] {
             border-radius: 14px;
+            border: none;
+            outline: none;
           }
 
           .btn .caret {

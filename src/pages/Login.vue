@@ -34,8 +34,7 @@
             <input type="password" class="form-control" name="password" v-model="loginData.password" placeholder="密码">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary btn-block" :disabled="isLogin" type="submit"
-                    v-text="isLogin ? '登录中...':'登 录'"></button>
+            <button class="btn btn-primary btn-block" :disabled="isLogin" type="submit" v-text="isLogin ? '登录中...':'登 录'"></button>
           </div>
         </form>
       </div>
@@ -47,6 +46,7 @@
   import * as UserService from '../api/user';
   import Storage from '../commons/utils/Storage';
   import layer from 'layui-layer';
+
   import '../assets/style/login.scss';
 
   export default {

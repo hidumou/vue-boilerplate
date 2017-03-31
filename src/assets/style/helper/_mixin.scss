@@ -298,3 +298,22 @@ $legacy-android-uc: 'ua-stupid-uc';
 //    border-#{$dir}-right-radius: 14px;
 //  }
 //}
+
+
+
+@mixin linear-gradient($dir,$from, $to) {
+  /* Fallback for sad browsers */
+  background-color: $to;
+  /* Mozilla Firefox */
+  background-image:-moz-linear-gradient($dir,$from, $to);
+  /* Opera */
+  background-image:-o-linear-gradient($dir,$from, $to);
+  /* WebKit (Safari 4+, Chrome 1+) */
+  background-image:-webkit-gradient(linear, left, right, color-stop(0, $from), color-stop(1, $to));
+  /* WebKit (Chrome 11+) */
+  background-image: -webkit-linear-gradient($dir,$from, $to);
+  /* IE10 */
+  background-image: -ms-linear-gradient($dir,$from, $to);
+  /* W3C */
+  background-image: linear-gradient($dir,$from, $to);
+}
