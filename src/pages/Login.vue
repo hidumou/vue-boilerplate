@@ -51,7 +51,6 @@
   export default {
     created(){
       this.initRole();
-      console.log(this);
     },
     methods: {
       initRole: function () {
@@ -60,10 +59,6 @@
       },
       selectRole: function (role) {
         this.currentRole = role;
-        return this;
-      },
-      changeLoginBtnState: function () {
-        this.isLogin = !this.isLogin;
         return this;
       },
       validate: function () {

@@ -1,0 +1,48 @@
+@import "helper/index";
+
+.dashboard {
+  //概览
+  .overview {
+    .col-lg-3 {
+      padding: 12px;
+    }
+    .block {
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: $color-glob-text;
+      small {
+        color: $color-glob-text;
+      }
+      &.record-block {
+        background: #29a67c;
+      }
+
+      &.time-block {
+        background: #35889a;
+      }
+
+      &.money-block {
+        background: #67aee6;
+      }
+
+      &.count-block {
+        background: #e66067;
+      }
+    }
+  }
+
+  //title
+  .alert-green{
+    color: #33899a;
+    background-color: #d4eee5;
+    border-color: #d4eee5;
+    font-size: 16px;
+  }
+
+  //记录列表
+  .recently-list{
+    border:1px solid #b8cbc5;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+}

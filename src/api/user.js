@@ -6,7 +6,7 @@
 
 import axios from 'axios';
 import sha256 from 'sha256';
-import Storage from '../commons/utils/Storage';
+import Storage from '../commons/utils/storage';
 
 /**
  * 登录

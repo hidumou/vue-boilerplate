@@ -1,15 +1,14 @@
-@import "common";
-
-.navbar-parking{
+.navbar-parking {
   background: $nav-bg-color;
   color: $color-glob-text;
-  a{
+
+  a {
     color: $color-glob-text;
   }
 
   //重新计算 nva height
   .navbar-brand,
-  .navbar-nav > li > a{
+  .navbar-nav > li > a {
     height: $nav-height;
     padding-top: ($nav-height - $nav-line-height)/2;
     padding-bottom: ($nav-height - $nav-line-height)/2;
@@ -19,15 +18,15 @@
 
     //overwrite hover style
     &:hover,
-    &:focus{
+    &:focus {
       background: $nav-active-bg;
       color: $color-glob-text;
     }
   }
 
   //active router style
-  .router-link-active{
-    &:after{
+  .router-link-active {
+    &:after {
       content: "";
       display: block;
       position: absolute;
@@ -40,10 +39,10 @@
   }
 
   //tip count
-  .navbar-right{
-    code{
+  .navbar-right {
+    code {
       background: #E55F67;
-      border-radius:30px;
+      border-radius: 30px;
       color: $color-glob-text;
     }
   }

@@ -1,0 +1,44 @@
+//overwrite bootstrap table
+
+$table-border:1px solid #b8cbc5;
+
+.table{
+
+  &.table-parking{
+    margin-bottom:0;
+  }
+
+  &.table-center{
+    td,th{
+      text-align: center;
+    }
+
+    tbody{
+      tr:first-child{
+        td,th{
+          border-top: none;
+        }
+      }
+      td,th{
+        border-top: $table-border;
+      }
+    }
+  }
+
+  //表头 tag
+  .tag{
+    top:-10px;
+
+    &.tag-red{
+      color: #e55c63;
+    }
+
+    &.tag-yellow{
+      color: #fbb321;
+    }
+  }
+}
+
+
+
+

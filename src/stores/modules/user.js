@@ -6,7 +6,7 @@
 
 import * as types from '../mutation-types';
 import * as UserService from '../../api/user';
-import Storage from '../../commons/utils/Storage';
+import Storage from '../../commons/utils/storage';
 import layer from 'layui-layer';
 
 const state = {
@@ -17,6 +17,7 @@ const state = {
 
 //action
 const actions = {
+
   login({commit}, params){
     commit(types.USER_LOGIN_STATE, true);
     UserService.login(params).then(res => {
