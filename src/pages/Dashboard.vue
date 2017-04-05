@@ -82,8 +82,6 @@
         stime:moment().startOf('day').valueOf(),
         etime:Date.now()
       });
-
-      console.log(this);
     },
     computed: {
       ...mapGetters(['pageSize', 'rechargeRecordList', 'currentPage']),
