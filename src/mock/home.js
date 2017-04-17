@@ -6,13 +6,6 @@
 import Mock from 'mockjs';
 
 /**
- * 模拟请求时长
- */
-Mock.setup({
-  timeout: '500-1000'
-});
-
-/**
  * 首页列表
  */
 Mock.mock(

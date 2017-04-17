@@ -1,0 +1,38 @@
+@import "helper/index";
+
+.shop-list {
+  .table {
+
+    .label {
+      &.label-success {
+        background: #d1ece3;
+        color: #4cb18f;
+      }
+
+      &.label-info {
+        background: #ddeef8;
+        color: #67aee6;
+      }
+    }
+
+    .user-type{
+      .btn{
+        width: 60px;
+        height: 24px;
+        line-height: 21px;
+        padding: 0;
+
+        &.btn-success{
+          background: #53b795;
+        }
+        &.btn-info{
+          background: #84bceb;
+        }
+      }
+    }
+
+    .address{
+
+    }
+  }
+}

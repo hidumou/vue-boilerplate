@@ -1,4 +1,9 @@
-@import "nprogress.css";
+@import "./helper/index";
+@import "table";
+@import "nav";
+@import "panels";
+@import "list-group";
+@import "nav-tabs";
 
 body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption {
   padding: 0;
@@ -45,59 +50,76 @@ input[type="button"], input[type="submit"], input[type="search"], input[type="re
 
 textarea { -webkit-appearance: none;}
 
-html,body{
+html,body,#app{
   height: 100%;
   width: 100%;
   background-color: #fff;
 }
 
-
-.clear:after{
-  content: '';
-  display: block;
-  clear: both;
+.footer{
+  padding: 40px;
 }
 
-.clear{
-  zoom:1;
+//title
+.alert-green{
+  color: #33899a;
+  background-color: #d4eee5;
+  border-color: #d4eee5;
+  font-size: 16px;
+
+  .btn{
+    line-height: 15px;
+    background-color: #35889a;
+    border:none;
+    margin-left: 10px;
+    float: right;
+    outline: none;
+    &:hover,
+    &:active,
+    &:focus{
+      background-color: #35889a;
+    }
+  }
 }
 
-.back_img{
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.margin{
-  margin: 0 auto;
-}
-
-.left{
-  float: left;
-}
-
-.right{
-  float: right;
-}
-
-.hide{
-  display: none;
-}
-
-.show{
-  display: block;
-}
-
-.ellipsis{
+//列表
+.list{
+  border:1px solid #b8cbc5;
+  border-radius: 5px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-bottom: 25px;
 }
 
-.router-fade-enter-active,
-.router-fade-leave-active {
-  transition: opacity .3s;
+//大标题提示
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+
+  h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
 }
 
-.router-fade-enter, .router-fade-leave-active {
-  opacity: 0;
+.bs-callout-info {
+  $cl : #1b809e;
+  border-left-color: #1b809e;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: $cl;
+  }
+}
+
+.bs-callout-danger {
+  $cl : #ce4844;
+
+  border-left-color: $cl;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: $cl;
+  }
 }

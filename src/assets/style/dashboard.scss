@@ -1,0 +1,33 @@
+@import "helper/index";
+
+.dashboard {
+  //概览
+  .overview {
+    .col-lg-3 {
+      padding: 12px;
+    }
+    .block {
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: $color-glob-text;
+      small {
+        color: $color-glob-text;
+      }
+      &.record-block {
+        background: #29a67c;
+      }
+
+      &.time-block {
+        background: #35889a;
+      }
+
+      &.money-block {
+        background: #67aee6;
+      }
+
+      &.count-block {
+        background: #e66067;
+      }
+    }
+  }
+}

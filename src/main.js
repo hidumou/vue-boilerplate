@@ -1,49 +1,24 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import routes from './router';
+import router from './router';
 import store from './stores';
-import axios from 'axios';
-import layer from 'layui-layer';
+import * as filters from './commons/filters';
+import components from './components';
+import * as directives from './commons/directives';
 
-import './mock';
-
-/**
- * 请求拦截器
- */
-axios.interceptors.request.use(config => {
-    layer.load(2);
-    config.headers['User-Agent'] = 'ParkingWangAPIClientWeb';
-    config.headers['Accept-Version'] = 'v2.0';
-    return config;
-  },
-  err => {
-    return Promise.reject(err);
-  });
-
-/**
- * 响应拦截器
- */
-axios.interceptors.response.use(response => {
-    layer.closeAll('loading');
-    return response;
-  },
-  error => {
-    return Promise.reject(error.response.data)
-  }
-);
-
-//路由
-Vue.use(VueRouter);
-
-//UI组件
-// Vue.use(iView);
-
-const router = new VueRouter({
-  routes
-});
+import './api/axios.config';
+import './commons/utils/validator.extends';
 
 
-const app = new Vue({
-  router,
-  store
-}).$mount('#app');
+//生产环境提示信息 是否显示
+Vue.config.productionTip = false;
+
+//reg filters
+Object.keys(filters).forEach(function (k) {Vue.filter(k, filters[k]);});
+
+//reg components
+Object.keys(components).forEach(function (k) {Vue.component(k, components[k]);});
+
+//reg directives
+Object.keys(directives).forEach(function (k) {Vue.directive(k, directives[k]);});
+
+new Vue({router, store}).$mount('#app');

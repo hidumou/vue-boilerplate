@@ -1,0 +1,120 @@
+//overwrite bootstrap table
+
+$table-border:1px solid #b8cbc5;
+
+.table{
+
+  &.table-parking{
+    margin-bottom:0;
+  }
+
+  &.table-center{
+    td,th{
+      text-align: center;
+    }
+
+    tbody{
+      tr:first-child{
+        td,th{
+          border-top: none;
+        }
+      }
+      tr:nth-child(2n){
+        td,th{
+          background-color: #f7feff;
+        }
+      }
+      td,th{
+        border-top: $table-border;
+        padding: 8px 0;
+        font-size: 12px;
+        vertical-align: middle;
+        background-color: #ffffff;
+        a{
+          text-decoration:underline;
+        }
+      }
+    }
+  }
+
+  //表头 tag
+  .tag{
+    top:-10px;
+
+    &.tag-red{
+      color: #e55c63;
+    }
+
+    &.tag-yellow{
+      color: #fbb321;
+    }
+  }
+
+  .label{
+    padding: .3em 1.5em .38em;
+    font-size: 12px;
+
+    &.label-success{//次数
+      background: #53b795;
+    }
+    &.label-primary{//时长
+      background: #5ea0ae;
+    }
+    &.label-info{//金额
+      background: #84bceb;
+    }
+    &.label-danger{//折扣
+      background: #eb8086;
+    }
+  }
+
+  .btns{
+    font-size: 0;
+
+    .btn{
+      background: #fff;
+      width: 60px;
+      height: 24px;
+      margin-right: 10px;
+      outline: none;
+
+      &:hover{
+        background: inherit;
+      }
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &.btn-info{
+        color: #27a97d;
+        border: 1px solid #27a97d;
+      }
+
+      &.btn-danger{
+        color: #67ade8;
+        border: 1px solid #67ade8;
+      }
+
+      &.btn-warning{
+        color: #29a67c;
+        border: 1px solid #29a67c;
+      }
+
+      &.btn-success{
+        color: #e76067;
+        border: 1px solid #e76067;
+      }
+
+      &.btn-disabled{
+        color: #b3b3b3;
+        border: 1px solid #b3b3b3;
+      }
+
+    }
+  }
+}
+
+
+
+

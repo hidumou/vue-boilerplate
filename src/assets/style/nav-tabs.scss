@@ -1,0 +1,18 @@
+.nav-tabs {
+  > li {
+    &.active{
+      >a{
+        color: #000;
+      }
+    }
+
+    > a {
+      color: #7e8482;
+    }
+  }
+}
+.tab-content {
+  >.tab-pane{
+    padding: 10px 0;
+  }
+}

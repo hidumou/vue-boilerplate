@@ -1,0 +1,32 @@
+@mixin list-group-item-variant($bg,$color) {
+
+  &.hover {
+    .list-group-item {
+      &:hover {
+        background-color: $bg;
+        color: $color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .list-group-item {
+    &.active,
+    &.active:hover,
+    &.active:focus {
+      z-index: 2;
+      color: $color;
+      background-color: $bg;
+      border-color: $bg;
+    }
+  }
+
+}
+
+.list-group-gray {
+  @include list-group-item-variant(#4c5359, #fff);
+}
+
+.list-group{
+
+}

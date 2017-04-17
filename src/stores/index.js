@@ -6,23 +6,34 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
-import * as actions from './actions';
-import * as getters from './getters';
-import demo from './modules/demo';
-import home from './modules/home';
+import actions from './actions';
+import getters from './getters';
+import mutations from './mutations';
+
+import commonState from './commonState';
+import user from './modules/user';
+import shop from './modules/shop';
+import recharge from './modules/recharge';
+import meeting from './modules/meeting';
+import dispatch from './modules/dispatch';
 
 Vue.use(Vuex);
 
 let store = new Vuex.Store({
-  actions,
-  getters,
+  actions:actions,
+  getters:getters,
+  state:commonState,
+  mutations:mutations,
   modules: {
-    demo,
-    home
+    user,
+    recharge,
+    shop,
+    meeting,
+    dispatch,
   },
   plugins: [createLogger()],
   strict: process.env.NODE_ENV !== 'production'
 });
 
-window.store = store;
+
 export default store;
